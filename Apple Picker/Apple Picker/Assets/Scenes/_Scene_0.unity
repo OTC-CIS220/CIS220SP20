@@ -179,6 +179,28 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &416252297 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1183347646202106, guid: 879518bcf00be754488502ebda3f2bb5,
+    type: 2}
+  m_PrefabInternal: {fileID: 432722577}
+--- !u!114 &416252298
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 416252297}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44b5478838456984c8f72235ae95e64b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  applePrefab: {fileID: 1747446054324692, guid: 76255f17a1c04ad46a3f61fec7a8a104,
+    type: 2}
+  speed: 1
+  leftAndRightEdge: 14
+  chanceToChangeDirections: 0.1
+  secondsBetweenAppleDrops: 1
 --- !u!1001 &432722577
 Prefab:
   m_ObjectHideFlags: 0
@@ -188,11 +210,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4429492245251606, guid: 879518bcf00be754488502ebda3f2bb5, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4429492245251606, guid: 879518bcf00be754488502ebda3f2bb5, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4429492245251606, guid: 879518bcf00be754488502ebda3f2bb5, type: 2}
       propertyPath: m_LocalPosition.z
@@ -217,6 +239,23 @@ Prefab:
     - target: {fileID: 4429492245251606, guid: 879518bcf00be754488502ebda3f2bb5, type: 2}
       propertyPath: m_RootOrder
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 54156143139231268, guid: 879518bcf00be754488502ebda3f2bb5,
+        type: 2}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183347646202106, guid: 879518bcf00be754488502ebda3f2bb5, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1096721661260396, guid: 879518bcf00be754488502ebda3f2bb5, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1077487006497414, guid: 879518bcf00be754488502ebda3f2bb5, type: 2}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 879518bcf00be754488502ebda3f2bb5, type: 2}
