@@ -6,11 +6,11 @@ public class AppleTree : MonoBehaviour {
     [Header("Set in Inspector")]
     public GameObject applePrefab;
     // speed at which the apple tree moves
-    public float speed = 1f;
+    public float speed = 5f;
     // distance where the Apple Tree turns around
-    public float leftAndRightEdge = 10f;
+    public float leftAndRightEdge = 20f;
     // chance the tree will change directions
-    public float chanceToChangeDirections = 0.1f;
+    public float chanceToChangeDirections = 0.0001f;
     // rate at which the apples will be instantiated
     public float secondsBetweenAppleDrops = 1f;
 	// Use this for initialization
