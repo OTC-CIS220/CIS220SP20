@@ -272,8 +272,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   applePrefab: {fileID: 1747446054324692, guid: 76255f17a1c04ad46a3f61fec7a8a104,
     type: 2}
-  speed: 1
-  leftAndRightEdge: 14
+  flarePrefab: {fileID: 1323694044756372, guid: 66b66655f3342e44ba4555cd0196a07c,
+    type: 2}
+  speed: 5
+  leftAndRightEdge: 20
   chanceToChangeDirections: 0.1
   secondsBetweenAppleDrops: 1
 --- !u!1001 &432722577
@@ -332,6 +334,11 @@ Prefab:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 1183347646202106, guid: 879518bcf00be754488502ebda3f2bb5, type: 2}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000,
+        type: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 879518bcf00be754488502ebda3f2bb5, type: 2}
   m_IsPrefabAsset: 0

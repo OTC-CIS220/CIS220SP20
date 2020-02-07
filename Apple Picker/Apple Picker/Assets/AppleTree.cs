@@ -5,6 +5,7 @@ using UnityEngine;
 public class AppleTree : MonoBehaviour {
     [Header("Set in Inspector")]
     public GameObject applePrefab;
+    public GameObject flarePrefab;
     // speed at which the apple tree moves
     public float speed = 5f;
     // distance where the Apple Tree turns around
@@ -13,10 +14,13 @@ public class AppleTree : MonoBehaviour {
     public float chanceToChangeDirections = 0.0001f;
     // rate at which the apples will be instantiated
     public float secondsBetweenAppleDrops = 1f;
+    private static Random randGen = new Random();
 	// Use this for initialization
 	void Start () {
         // drop apples every second
         Invoke("DropApple", 2f);
+        GameObject flare = Instantiate<GameObject>(flarePrefab);
+
 	}
 
     void DropApple()
@@ -44,7 +48,7 @@ public class AppleTree : MonoBehaviour {
     }
     private void FixedUpdate()
     {
-        if (Random.value < chanceToChangeDirections)
+        if (RandomValue.GetRandom() < chanceToChangeDirections)
         {
             speed *= -1;
         }
