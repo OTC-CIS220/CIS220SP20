@@ -1,6 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Globalization;
+using System.Threading;
+
 
 public class TileCamera : MonoBehaviour {
     // static variables
@@ -38,16 +41,27 @@ public class TileCamera : MonoBehaviour {
         System.Globalization.NumberStyles hexNum;
         hexNum = System.Globalization.NumberStyles.HexNumber;
 
-        MAP = new int[W, H];
+        MAP = new int[W + 1, H + 1];
         for (int j = 0; j <H; j++)
         {
             tileNums = lines[j].Split(' ');
             for (int i = 0; i < W; i++)
             {
                 if (tileNums[i] == "..")
+                {
                     MAP[i, j] = 0;
+                }
                 else
-                    MAP[i, j] = int.Parse(tileNums[i], hexNum);
+                {
+                    try {
+                        MAP[i, j] = int.Parse(tileNums[i], hexNum);
+                    }
+                    catch (System.Exception e)
+                    {
+                        MAP[i, j] = 0;
+                        print(e.Data);
+                    }
+                }
             } // end of row for loop
         }  // end of column for loop
         print("Parsed " + SPRITES.Length + " sprites");
