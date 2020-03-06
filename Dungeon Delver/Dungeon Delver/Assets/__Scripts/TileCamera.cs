@@ -41,11 +41,11 @@ public class TileCamera : MonoBehaviour {
         System.Globalization.NumberStyles hexNum;
         hexNum = System.Globalization.NumberStyles.HexNumber;
 
-        MAP = new int[W + 1, H + 1];
+        MAP = new int[W, H];
         for (int j = 0; j <H; j++)
         {
             tileNums = lines[j].Split(' ');
-            for (int i = 0; i < W; i++)
+            for (int i = 0; i < W - 1; i++)
             {
                 if (tileNums[i] == "..")
                 {
