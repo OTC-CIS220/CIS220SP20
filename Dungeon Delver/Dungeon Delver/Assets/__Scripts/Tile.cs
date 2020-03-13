@@ -7,8 +7,15 @@ public class Tile : MonoBehaviour {
     public int x;
     public int y;
     public int tileNum;
-	// Use this for initialization
-	public void SetTile (int eX, int eY, int eTileNum = -1) {
+
+    private BoxCollider bColl;
+
+    private void Awake()
+    {
+        bColl = GetComponent<BoxCollider>();
+    }
+    // Use this for initialization
+    public void SetTile (int eX, int eY, int eTileNum = -1) {
         x = eX;
         y = eY;
         transform.localPosition = new Vector3(x, y, 0);
@@ -20,7 +27,59 @@ public class Tile : MonoBehaviour {
         }
         tileNum = eTileNum;
         GetComponent<SpriteRenderer>().sprite = TileCamera.SPRITES[tileNum];
+
+        SetCollider();
 	}
 	
+    // arrange the collider for this tile
+    void SetCollider()
+    {
+        bColl.enabled = true;
+        char c = TileCamera.COLLISIONS[tileNum];
+
+        switch (c)
+        {
+            case 'S':   // whole
+                bColl.center = Vector3.zero;
+                bColl.size = Vector3.one;
+                break;
+            case 'W':   // top
+                bColl.center = new Vector3(0, 0.25f, 0);
+                bColl.size = new Vector3(1, 0.5f, 1);
+                break;
+            case 'A':   // left
+                bColl.center = new Vector3(-0.25f, 0, 0);
+                bColl.size = new Vector3(0.5f, 1, 1);
+                break;
+            case 'D':   // right
+                bColl.center = new Vector3(0.25f, 0, 0);
+                bColl.size = new Vector3(0.5f, 1, 1);
+                break;
+            case 'Q':   // top, left
+                bColl.center = new Vector3(-0.25f, 0.25f, 0);
+                bColl.size = new Vector3(0.5f, 0.5f, 1);
+                break;
+            case 'E':   // top, right
+                bColl.center = new Vector3(-0.25f, -0.25f, 0);
+                bColl.size = new Vector3(0.5f, 0.5f, 1);
+                break;
+            case 'Z':   // bottom, left
+                bColl.center = new Vector3(-0.25f, -0.25f, 0);
+                bColl.size = new Vector3(0.5f, 0.5f, 1);
+                break;
+            case 'X':   // bottom
+                bColl.center = new Vector3(0, -0.25f, 0);
+                bColl.size = new Vector3(1, 0.5f, 1);
+                break;
+            case 'C':   // bottom, right
+                bColl.center = new Vector3(0.25f, -0.25f, 0);
+                bColl.size = new Vector3(0.5f, 0.5f, 1);
+                break;
+            default:    // anything else
+                bColl.enabled = false;
+                break;
+
+        }
+    }
 
 }
