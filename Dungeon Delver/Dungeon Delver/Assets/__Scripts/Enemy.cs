@@ -19,7 +19,7 @@ public class Enemy : MonoBehaviour
     protected SpriteRenderer sRend;
 
     // Start is called before the first frame update
-    void Awake()
+    protected virtual void Awake()
     {
         health = maxHealth;
         anim = GetComponent<Animator>();
